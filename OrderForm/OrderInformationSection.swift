@@ -5,11 +5,14 @@ struct OrderInformationSection: View {
     
     var body: some View {
         Section(header: Text("Order Information")) {
+            // TODO: add more types of pizza
+            // TODO: additional: change image of pizza
             Text("Italian Pizza")
             HStack{
                 Picker("Options", selection: $viewModel.pizzaOptionTag){
                     Text("Large").tag(0)
                     Text("Medium").tag(1)
+                    // TODO: add small or half
                 }
                 .pickerStyle(MenuPickerStyle())
                 

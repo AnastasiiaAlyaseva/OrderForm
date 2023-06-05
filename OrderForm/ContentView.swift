@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = ContentViewModel()
+    @StateObject private var viewModel = ContentViewModel()
     
     var body: some View {
         NavigationView{
@@ -27,6 +27,8 @@ struct ContentView: View {
                 }).disabled(viewModel.orderStatus)
             }
             .navigationBarTitle("Order")
+            
+            // TODO: New Button - "New order" - active always, clear all states
         }
     }
 }
