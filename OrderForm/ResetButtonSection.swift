@@ -2,19 +2,22 @@ import SwiftUI
 
 struct ResetButtonSection: View {
     @ObservedObject var viewModel: ContentViewModel
+    @State private var showingAlert = false
     
     var body: some View {
         Section{
             Button ("New order") {
-                viewModel.showingAlert = true
+                showingAlert = true
             }
-            .alert(isPresented:$viewModel.showingAlert) {
-                Alert(title: Text("Are you sure you want to make a new order?"),
-                      primaryButton: .destructive(Text("Ok")) {
-                    viewModel.resertToDefault()
-                },
-                      secondaryButton: .cancel()
-                )}
+            .alert(isPresented:$showingAlert) {
+                Alert(
+                    title: Text("Are you sure you want to make a new order?"),
+                    primaryButton: .destructive(Text("Ok")) {
+                        viewModel.resertToDefault()
+                    },
+                    secondaryButton: .cancel()
+                )
+            }
         }
         .buttonStyle(BorderlessButtonStyle())
     }

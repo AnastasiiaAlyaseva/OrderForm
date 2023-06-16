@@ -8,7 +8,6 @@ class ContentViewModel: ObservableObject {
     @Published var quantity = 1
     var pizzaOption = ["Large", "Medium"] // TODO: as smiles, but it should be connected with pizzaOptionTag
     @Published var orderStatus: Bool = false
-    @Published var showingAlert = false
     
     func resertToDefault() {
         name = ""
