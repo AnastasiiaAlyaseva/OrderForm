@@ -5,30 +5,24 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-            Form{
-                CustomerInformationSection(viewModel: viewModel)
+            VStack {
+                Form{
+                    CustomerInformationSection(viewModel: viewModel)
+                    
+                    Image("pizza")
+                        .resizable()
+                        .frame(height: 200)
+                        .scaledToFit()
+                        .cornerRadius(10)
+                    
+                    OrderInformationSection(viewModel: viewModel)
+                    
+                    ResetButtonSection(viewModel: viewModel)
+                }
+                .navigationBarTitle("Order")
                 
-                Image("pizza")
-                    .resizable()
-                    .frame(height: 200)
-                    .scaledToFit()
-                    .cornerRadius(10)
-               
-                OrderInformationSection(viewModel: viewModel)
-                
-                Button(action: {
-                    viewModel.placeOrder()
-                }, label: {
-                    HStack {
-                        Spacer()
-                        Text(viewModel.orderStatus ? "Ordered" : "Place Order")
-                        Spacer()
-                    }
-                }).disabled(viewModel.orderStatus)
+                OrderButtonSection(viewModel: viewModel)
             }
-            .navigationBarTitle("Order")
-            
-            // TODO: New Button - "New order" - active always, clear all states
         }
     }
 }
