@@ -2,6 +2,7 @@ import SwiftUI
 
 struct OrderButtonSection: View {
     @ObservedObject var viewModel: ContentViewModel
+    @State private var showingAlert = false
     
     var body: some View {
         Button(action: {

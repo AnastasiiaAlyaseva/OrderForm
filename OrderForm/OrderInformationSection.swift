@@ -12,7 +12,8 @@ struct OrderInformationSection: View {
                 Picker("Options", selection: $viewModel.pizzaOptionTag){
                     Text("Large").tag(0)
                     Text("Medium").tag(1)
-                    // TODO: add small or half
+                    Text("Half").tag(2)
+                    Text("Small").tag(3)
                 }
                 .pickerStyle(MenuPickerStyle())
                 
