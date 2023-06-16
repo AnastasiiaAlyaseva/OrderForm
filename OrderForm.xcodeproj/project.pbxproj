@@ -14,6 +14,8 @@
 		B57CAABF2A2779F70031A91C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CAABE2A2779F70031A91C /* ContentViewModel.swift */; };
 		B57CAAC12A277A920031A91C /* CustomerInformationSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CAAC02A277A920031A91C /* CustomerInformationSection.swift */; };
 		B57CAAC32A277B520031A91C /* OrderInformationSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CAAC22A277B520031A91C /* OrderInformationSection.swift */; };
+		B5D662CA2A3C622B009FC014 /* ResetButtonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D662C92A3C622B009FC014 /* ResetButtonSection.swift */; };
+		B5D662CC2A3C6697009FC014 /* OrderButtonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D662CB2A3C6697009FC014 /* OrderButtonSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		B57CAAC02A277A920031A91C /* CustomerInformationSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInformationSection.swift; sourceTree = "<group>"; };
 		B57CAAC22A277B520031A91C /* OrderInformationSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInformationSection.swift; sourceTree = "<group>"; };
 		B57CAB9B2A2E22D10031A91C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B5D662C92A3C622B009FC014 /* ResetButtonSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButtonSection.swift; sourceTree = "<group>"; };
+		B5D662CB2A3C6697009FC014 /* OrderButtonSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderButtonSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				B57CAB9B2A2E22D10031A91C /* Info.plist */,
 				B57CAAB02A2777D90031A91C /* OrderFormApp.swift */,
 				B57CAAB22A2777D90031A91C /* ContentView.swift */,
+				B5D662CB2A3C6697009FC014 /* OrderButtonSection.swift */,
+				B5D662C92A3C622B009FC014 /* ResetButtonSection.swift */,
 				B57CAABE2A2779F70031A91C /* ContentViewModel.swift */,
 				B57CAAC02A277A920031A91C /* CustomerInformationSection.swift */,
 				B57CAAC22A277B520031A91C /* OrderInformationSection.swift */,
@@ -149,8 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B57CAAC12A277A920031A91C /* CustomerInformationSection.swift in Sources */,
+				B5D662CA2A3C622B009FC014 /* ResetButtonSection.swift in Sources */,
 				B57CAAB32A2777D90031A91C /* ContentView.swift in Sources */,
 				B57CAAB12A2777D90031A91C /* OrderFormApp.swift in Sources */,
+				B5D662CC2A3C6697009FC014 /* OrderButtonSection.swift in Sources */,
 				B57CAABF2A2779F70031A91C /* ContentViewModel.swift in Sources */,
 				B57CAAC32A277B520031A91C /* OrderInformationSection.swift in Sources */,
 			);
