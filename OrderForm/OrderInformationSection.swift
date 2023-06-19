@@ -5,22 +5,22 @@ struct OrderInformationSection: View {
     
     var body: some View {
         Section(header: Text("Order Information")) {
-            // TODO: additional: change image of pizza
             HStack{
-                Picker("Types of Pizza", selection: $viewModel.pizzaTypeTag){
-                    Text("Cheese").tag(0)
-                    Text("Neapolitan").tag(1)
-                    Text("Sicilian").tag(2)
-                    Text("Hawaiian").tag(3)
-                    Text("New York").tag(4)
+                Picker("Types of Pizza", selection: $viewModel.pizzaType){
+                    Text(PizzaType.cheese.name).tag(PizzaType.cheese)
+                    Text(PizzaType.neapolitan.name).tag(PizzaType.neapolitan)
+                    Text(PizzaType.sicilian.name).tag(PizzaType.sicilian)
+                    Text(PizzaType.hawaiian.name).tag(PizzaType.hawaiian)
+                    Text(PizzaType.newYork.name).tag(PizzaType.newYork)
                 }
                 .pickerStyle(MenuPickerStyle())
             }
-            .onChange(of: viewModel.pizzaTypeTag) { newValue in
-                    viewModel.performAction()
+            .onChange(of: viewModel.pizzaType) { newValue in
+                viewModel.performAction()
             }
             
             HStack{
+                // TODO: pizzaOptionTag like pizza type
                 Picker("Options", selection: $viewModel.pizzaOptionTag){
                     Text("Large").tag(0)
                     Text("Medium").tag(1)

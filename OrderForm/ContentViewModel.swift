@@ -6,7 +6,7 @@ class ContentViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var pizzaOptionTag: Int = 0
     @Published var quantity = 1
-    @Published var pizzaTypeTag: Int = 0
+    @Published var pizzaType: PizzaType = .cheese
     @Published var orderStatus: Bool = false
     @Published var imageName: String = "Cheese"
     
@@ -17,32 +17,23 @@ class ContentViewModel: ObservableObject {
         pizzaOptionTag = 0
         quantity = 1
         orderStatus = false
+        imageName = "Cheese"
+        pizzaType = .cheese
     }
     
     func performAction() {
-        
-        switch pizzaTypeTag {
-        case 0:
+        switch pizzaType {
+        case .cheese:
             imageName = "Cheese"
-        case 1:
+        case .neapolitan:
             imageName = "Neapolitan"
-        case 2:
+        case .sicilian:
             imageName = "Sicilian"
-        case 3:
+        case .hawaiian:
             imageName = "Hawaiian"
-        case 4:
+        case .newYork:
             imageName = "New York"
-        default:
-            print("Error")
         }
-    }
-    
-    enum PizzaType: Int {
-       case cheese
-       case neapolitan
-       case sicilian
-       case hawaiian
-       case newYork
     }
     
     func placeOrder(){
