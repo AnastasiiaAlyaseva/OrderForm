@@ -8,6 +8,7 @@ class ContentViewModel: ObservableObject {
     @Published var quantity = 1
     @Published var pizzaTypeTag: Int = 0
     @Published var orderStatus: Bool = false
+    @Published var imageName: String = "Cheese"
     
     func resertToDefault() {
         name = ""
@@ -19,7 +20,6 @@ class ContentViewModel: ObservableObject {
     }
     
     func performAction() {
-        var imageName: String = "Cheese"
         
         switch pizzaTypeTag {
         case 0:
@@ -35,7 +35,6 @@ class ContentViewModel: ObservableObject {
         default:
             print("Error")
         }
-        print(imageName)
     }
     
     enum PizzaType: Int {

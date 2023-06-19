@@ -9,7 +9,7 @@ struct ContentView: View {
                 Form{
                     CustomerInformationSection(viewModel: viewModel)
                     
-                    Image("pizza")
+                    Image(viewModel.imageName)
                         .resizable()
                         .frame(height: 200)
                         .scaledToFit()
