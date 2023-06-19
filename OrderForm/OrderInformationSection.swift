@@ -16,6 +16,9 @@ struct OrderInformationSection: View {
                 }
                 .pickerStyle(MenuPickerStyle())
             }
+            .onChange(of: viewModel.pizzaTypeTag) { newValue in
+                    viewModel.performAction()
+            }
             
             HStack{
                 Picker("Options", selection: $viewModel.pizzaOptionTag){
