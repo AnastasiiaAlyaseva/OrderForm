@@ -6,7 +6,9 @@ class ContentViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var pizzaOptionTag: Int = 0
     @Published var quantity = 1
-    var pizzaOption = ["Large", "Medium", "Half", "Small"] // TODO: as smiles, but it should be connected with pizzaOptionTag
+    @Published var pizzaTypeTag: Int = 0
+    var pizzaOption = ["Large", "Medium", "Half", "Small"] 
+    var pizzaType = ["Cheese", "Neapolitan", "Sicilian", "Hawaiian","New York"]
     @Published var orderStatus: Bool = false
     
     func resertToDefault() {

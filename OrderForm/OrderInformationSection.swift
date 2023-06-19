@@ -5,9 +5,18 @@ struct OrderInformationSection: View {
     
     var body: some View {
         Section(header: Text("Order Information")) {
-            // TODO: add more types of pizza
             // TODO: additional: change image of pizza
-            Text("Italian Pizza")
+            HStack{
+                Picker("Types of Pizza", selection: $viewModel.pizzaTypeTag){
+                    Text("Cheese").tag(0)
+                    Text("Neapolitan").tag(1)
+                    Text("Sicilian").tag(2)
+                    Text("Hawaiian").tag(3)
+                    Text("New York").tag(4)
+                }
+                .pickerStyle(MenuPickerStyle())
+            }
+            
             HStack{
                 Picker("Options", selection: $viewModel.pizzaOptionTag){
                     Text("Large").tag(0)
@@ -16,10 +25,8 @@ struct OrderInformationSection: View {
                     Text("Small").tag(3)
                 }
                 .pickerStyle(MenuPickerStyle())
-                
-                Spacer()
-                Text(viewModel.pizzaOption[viewModel.pizzaOptionTag])
             }
+            
             Stepper(value:$viewModel.quantity, in: 1...1000) {
                 Text("Quantity: \(viewModel.quantity)")
             }
