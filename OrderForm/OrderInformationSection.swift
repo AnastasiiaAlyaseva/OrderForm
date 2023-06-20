@@ -20,12 +20,11 @@ struct OrderInformationSection: View {
             }
             
             HStack{
-                // TODO: pizzaOptionTag like pizza type
-                Picker("Options", selection: $viewModel.pizzaOptionTag){
-                    Text("Large").tag(0)
-                    Text("Medium").tag(1)
-                    Text("Half").tag(2)
-                    Text("Small").tag(3)
+                Picker("Options", selection: $viewModel.pizzaOption){
+                    Text(PizzaOption.large.name).tag(PizzaOption.large)
+                    Text(PizzaOption.medium.name).tag(PizzaOption.medium)
+                    Text(PizzaOption.half.name).tag(PizzaOption.half)
+                    Text(PizzaOption.small.name).tag(PizzaOption.small)
                 }
                 .pickerStyle(MenuPickerStyle())
             }
