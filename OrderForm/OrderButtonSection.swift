@@ -6,11 +6,14 @@ struct OrderButtonSection: View {
     
     var body: some View {
         Button(action: {
-            viewModel.placeOrder()
+            showingAlert = true
         }, label: {
             Text(viewModel.orderStatus ? "Ordered" : "Place Order")
         })
         .disabled(viewModel.orderStatus)
         .buttonStyle(BorderlessButtonStyle())
+        .alert(isPresented:$showingAlert) {
+            viewModel.placeOrderAlert()
+        }
     }
 }

@@ -36,9 +36,15 @@ class ContentViewModel: ObservableObject {
         }
     }
     
-    func placeOrder(){
-        orderStatus = true
-        // TODO: show alert with Name, type of pizza, size and quatity.
+    func placeOrderAlert() -> Alert {
+        let orderMessage = "Thank you, \(name)! You have ordered \(quantity) \(pizzaOption) \(pizzaType.name) pizza(s)."
+        
+        return Alert(title: Text("Order Confirmation"),
+                     message: Text(orderMessage),
+                     dismissButton: .default(Text("OK")) {
+            print("Order confirmed")
+            self.resertToDefault()
+        }
+        )
     }
 }
-
