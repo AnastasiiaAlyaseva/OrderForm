@@ -20,11 +20,11 @@ struct OrderInformationSection: View {
             }
             
             HStack{
-                Picker("Options", selection: $viewModel.pizzaOption){
-                    Text(PizzaOption.large.name).tag(PizzaOption.large)
-                    Text(PizzaOption.medium.name).tag(PizzaOption.medium)
-                    Text(PizzaOption.half.name).tag(PizzaOption.half)
-                    Text(PizzaOption.small.name).tag(PizzaOption.small)
+                Picker("Options", selection: $viewModel.pizzaSize){
+                    Text(PizzaSize.large.name).tag(PizzaSize.large)
+                    Text(PizzaSize.medium.name).tag(PizzaSize.medium)
+                    Text(PizzaSize.half.name).tag(PizzaSize.half)
+                    Text(PizzaSize.small.name).tag(PizzaSize.small)
                 }
                 .pickerStyle(MenuPickerStyle())
             }

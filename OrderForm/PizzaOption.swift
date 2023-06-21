@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum PizzaOption: Int, Hashable {
+enum PizzaSize: Int, Hashable {
     case large
     case medium
     case half

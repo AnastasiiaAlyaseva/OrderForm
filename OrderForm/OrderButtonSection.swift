@@ -13,7 +13,19 @@ struct OrderButtonSection: View {
         .disabled(viewModel.orderStatus)
         .buttonStyle(BorderlessButtonStyle())
         .alert(isPresented:$showingAlert) {
-            viewModel.placeOrderAlert()
+            placeOrderAlert()
         }
+    }
+    private func placeOrderAlert() -> Alert {
+        let orderMessage = "Thank you, \(viewModel.name)! You have ordered \(viewModel.quantity) \(viewModel.pizzaSize) \(viewModel.pizzaType.name) pizza(s)."
+        
+        return Alert(
+            title: Text("Order Confirmation"),
+            message: Text(orderMessage),
+            dismissButton: .default(Text("OK")) {
+                print("Order confirmed")
+                self.viewModel.resertToDefault()
+            }
+        )
     }
 }
