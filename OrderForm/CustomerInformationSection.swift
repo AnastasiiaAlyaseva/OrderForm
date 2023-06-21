@@ -6,19 +6,18 @@ struct CustomerInformationSection: View {
     
     var body: some View {
         Section(header: Text("Customer Information")) {
-            // TODO: address is optional, could be empty
             TextField("Customer Name", text: $viewModel.name)
+            
             TextField("Email", text: $viewModel.email, onEditingChanged: { inFocus in
                 if inFocus {
                     print("inFocus")
                 } else {
-                    guard viewModel.isEmailValidCheck() == true else {
+                    guard viewModel.isEmailValidCheck() else {
                         showingAlert = true
                         return
                     }
                 }
-            }
-            )
+            })
             .alert(isPresented:$showingAlert) {
                 Alert(
                     title: Text("You've entered an incorrect email address!"),
