@@ -12,10 +12,9 @@ struct CustomerInformationSection: View {
                 if inFocus {
                     print("inFocus")
                 } else {
-                    if viewModel.isEmailValidCheck() == true {
-                        print("correct email")
-                    } else {
+                    guard viewModel.isEmailValidCheck() == true else {
                         showingAlert = true
+                        return
                     }
                 }
             }
