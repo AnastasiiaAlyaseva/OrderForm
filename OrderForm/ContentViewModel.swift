@@ -22,5 +22,11 @@ class ContentViewModel: ObservableObject {
         orderStatus = true
         // TODO: show alert with Name, type of pizza, size and quatity.
     }
+    
+    func isEmailValidCheck() -> Bool {
+        let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let predicateEmail = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return predicateEmail.evaluate(with: email)
+    }
 }
 
