@@ -4,23 +4,36 @@ class ContentViewModel: ObservableObject {
     @Published var name: String = ""
     @Published var address: String = ""
     @Published var email: String = ""
-    @Published var pizzaOptionTag: Int = 0
+    @Published var pizzaSize: PizzaSize = .large
     @Published var quantity = 1
-    var pizzaOption = ["Large", "Medium"] // TODO: as smiles, but it should be connected with pizzaOptionTag
+    @Published var pizzaType: PizzaType = .cheese
     @Published var orderStatus: Bool = false
+    @Published var imageName: String = "Cheese"
     
     func resertToDefault() {
         name = ""
         address = ""
         email = ""
-        pizzaOptionTag = 0
+        pizzaSize = .large
         quantity = 1
         orderStatus = false
+        imageName = "Cheese"
+        pizzaType = .cheese
     }
     
-    func placeOrder(){
-        orderStatus = true
-        // TODO: show alert with Name, type of pizza, size and quatity.
+    func performAction() {
+        switch pizzaType {
+        case .cheese:
+            imageName = "Cheese"
+        case .neapolitan:
+            imageName = "Neapolitan"
+        case .sicilian:
+            imageName = "Sicilian"
+        case .hawaiian:
+            imageName = "Hawaiian"
+        case .newYork:
+            imageName = "New York"
+        }
     }
     
     func isEmailValidCheck() -> Bool {
@@ -29,4 +42,3 @@ class ContentViewModel: ObservableObject {
         return predicateEmail.evaluate(with: email)
     }
 }
-
