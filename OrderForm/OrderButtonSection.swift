@@ -10,7 +10,7 @@ struct OrderButtonSection: View {
         }, label: {
             Text(viewModel.orderStatus ? "Ordered" : "Place Order")
         })
-        .disabled(viewModel.orderStatus)
+        .disabled(viewModel.name.isEmpty || viewModel.email.isEmpty)
         .buttonStyle(BorderlessButtonStyle())
         .alert(isPresented:$showingAlert) {
             placeOrderAlert()

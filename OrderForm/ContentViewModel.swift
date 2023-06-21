@@ -36,4 +36,9 @@ class ContentViewModel: ObservableObject {
         }
     }
     
+    func isEmailValidCheck() -> Bool {
+        let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let predicateEmail = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return predicateEmail.evaluate(with: email)
+    }
 }
